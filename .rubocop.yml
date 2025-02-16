@@ -1,0 +1,6 @@
+AllCops:
+  NewCops: enable
+  UseCache: false
+  Exclude:
+     - 'bin/**/*'
+     - 'spec/**/*'

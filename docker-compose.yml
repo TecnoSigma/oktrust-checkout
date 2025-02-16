@@ -1,0 +1,11 @@
+version: '3'
+services:
+  checkout-web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3009 -b '0.0.0.0'"
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/checkout
+    ports:
+      - "3009:3009"
