@@ -1,0 +1,41 @@
+pt-BR:
+  messages:
+    errors:
+      required_field: 'Por favor, preencha todos os campos!'
+      generic: 'Erro no processamento dos dados!'
+  progress_bar:
+    steps:
+      1: '1'
+      2: '2'
+      3: '3'
+      4: '4'
+      5: '5'
+    labels:
+      register: 'Cadastro'
+      access: 'Acesso'
+      payment: 'Pagamento'
+      conference: 'Conferência'
+      congratulations: 'Congratulações'
+  checkouts:
+    register:
+      type:
+        person: 'Pessoa Física'
+        company: 'Pessoa Jurídica'
+      personal_data: 'Dados Pessoais'
+      name: 'Nome'
+      cpf: 'CPF'
+      company: 'Empresa'
+      cnpj: 'CNPJ'
+      responsible: 'Responsável'
+      phone: 'Telefone'
+      email: 'Email'
+      address: 'Endereço'
+      postal_code: 'CEP'
+      street: 'Endereço'
+      number: 'Número'
+      complement: 'Complemento'
+      district: 'Bairro'
+      city: 'Cidade'
+      state: 'Estado'
+      country: 'País'
+      continue_btn: 'Continuar'

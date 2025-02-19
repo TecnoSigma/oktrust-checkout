@@ -1,0 +1,17 @@
+<!-- Starts progress bar section -->
+<div class="progress-bar">
+
+  <% steps.each do |key, value| %>
+    <div class="<%= key %>">
+      <span class="progress-bar-<%= value[:status] %>">
+        <%= t("progress_bar.steps.#{value[:step]}") %>
+      </span>
+      <p><%= t("progress_bar.labels.#{key}") %></p>
+    </div>
+
+    <%= image_tag 'arrow.svg' unless key == :congratulations %>
+
+  <% end %>
+
+</div>
+<!-- Ends progress bar section -->

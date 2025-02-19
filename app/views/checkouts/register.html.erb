@@ -1,0 +1,97 @@
+<%= render 'partials/progress_bar', steps: steps('register') %>
+
+<!-- Starts main section -->
+<div class="main">
+  <div class="type">
+    <div class="person" id="personType">
+      <%= image_tag 'person.svg', alt: 'Pessoa Física' %>
+      <span><%= t('.type.person') %></span>
+      <div class="pointer" id="personPointer"></div>
+    </div>
+    <div class="company" id="companyType">
+      <%= image_tag 'company.svg', alt: 'Pessoa Jurídica' %>
+      <span><%= t('.type.company') %></span>
+      <div class="pointer" id="companyPointer"></div>
+    </div>
+  </div>
+  <%= form_with scope: 'register', url: store_register_path do |form| %>
+    <div class="form">
+      <div>
+        <h3><%= t('.personal_data') %></h3>
+      </div>
+      <div class="fields">
+        <div class="person" id="personGroup">
+          <div class="field">
+            <label><%= t('.name') %></label>
+            <%= form.text_field 'name', class: 'large-field', required: true %>
+          </div>
+          <div class="field">
+            <label><%= t('.cpf') %></label>
+            <%= form.text_field 'cpf', class: 'medium-field', required: true %>
+          </div>
+        </div>
+        <div class="company" id="companyGroup">
+          <div class="field">
+            <label><%= t('.company') %></label>
+            <%= form.text_field 'company', class: 'large-field', required: true %>
+          </div>
+          <div class="field">
+            <label><%= t('.cnpj') %></label>
+            <%= form.text_field 'cnpj', class: 'medium-field', required: true %>
+          </div>
+          <div class="field">
+            <label><%= t('.responsible') %></label>
+            <%= form.text_field 'responsible', class: 'large-field', required: true %>
+          </div>
+        </div>
+        <div class="field">
+          <label><%= t('.phone') %></label>
+          <%= form.text_field 'phone', class: 'medium-field', required: true %>
+        </div>
+        <div class="field">
+          <label><%= t('.email') %></label>
+          <%= form.email_field 'email', class: 'large-field', required: true %>
+        </div>
+      </div>
+      <div>
+        <h3><%= t('.address') %></h3>
+      </div>
+      <div class="fields">
+        <div class="field">
+          <label><%= t('.postal_code') %></label>
+          <%= form.text_field 'postal_code', class: 'short-field', required: true %>
+        </div>
+        <div class="field">
+          <label><%= t('.street') %></label>
+          <%= form.text_field 'street', class: 'large-field', required: true %>
+        </div>
+        <div class="field">
+          <label><%= t('.number') %></label>
+          <%= form.text_field 'number', class: 'short-field', required: true %>
+        </div>
+        <div class="field">
+          <label><%= t('.complement') %></label>
+          <%= form.text_field 'complement', class: 'short-field' %>
+        </div>
+        <div class="field">
+          <label><%= t('.district') %></label>
+          <%= form.text_field 'district', class: 'large-field', required: true %>
+        </div>
+        <div class="field">
+          <label><%= t('.city') %></label>
+          <%= form.text_field 'city', class: 'large-field', required: true %>
+        </div>
+        <div class="field">
+          <label><%= t('.state') %></label>
+          <%= form.select 'state', options_for_select(states), {}, required: true, class: 'medium-field' %>
+        </div>
+        <div class="field">
+          <label><%= t('.country') %></label>
+          <%= form.select 'country', options_for_select(countries), {}, required: true, class: 'short-field' %>
+        </div>
+      </div>
+      <%= form.submit t('.continue_btn'), class: 'form-btn' %>
+    <% end %>
+  </div>
+</div>
+<!-- Ends main section -->
